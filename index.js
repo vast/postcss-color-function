@@ -22,7 +22,7 @@ module.exports = function(options) {
         return
       }
 
-      if (decl.value.indexOf("var(") !== -1) {
+      if (decl.value.indexOf("(var(") !== -1) {
         if (!options.preserveCustomProps) {
           decl.remove()
           return
