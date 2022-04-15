@@ -29,6 +29,15 @@ test("color()", function(t) {
   t.end()
 })
 
+test("color() as default var() value", function(t) {
+  compareFixtures(
+    t,
+    "color-default",
+    "should transform color() in default var() value"
+  )
+  t.end()
+})
+
 test("logs warning when color() value cannot be parsed", function(t) {
   postcss(plugin()).process(read(filename("fixtures/error")), {from: undefined})
     .then(function(result) {
